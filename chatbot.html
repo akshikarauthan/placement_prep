@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Assistant | LeetCrack</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="css/theme.css" rel="stylesheet">
+  <link href="css/chatbot.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <div class="overlay">
+    <nav class="navbar">
+      <a href="index.html">LeetCrack<span style="color: black;">.</span></a>
+      <div style="display: flex; gap: 20px;">
+        <a href="companies.html">Companies</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="chatbot.html" class="active">AI Assistant</a>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card chat-card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <h5 class="mb-0">LeetCrack AI Assistant</h5>
+              <button id="voice-toggle" class="btn btn-sm btn-outline-primary">
+                <i class="bi bi-mic"></i> Voice Mode
+              </button>
+            </div>
+            <div class="card-body chat-body" id="chat-messages">
+              <div class="message assistant">
+                <div class="message-content">
+                  <p>👋 Hi! I'm your LeetCrack AI assistant. I can help you with:</p>
+                  <ul>
+                    <li>Explaining DSA concepts</li>
+                    <li>Finding relevant problems</li>
+                    <li>Providing solution approaches</li>
+                    <li>Creating study plans</li>
+                  </ul>
+                  <p>How can I help you today?</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="input-group">
+                <input type="text" id="user-input" class="form-control" placeholder="Ask me anything about DSA or LeetCode..." aria-label="Message">
+                <button class="btn btn-primary" type="button" id="send-button">Send</button>
+              </div>
+              <div id="voice-status" class="text-muted small mt-2 d-none">
+                Voice assistant is listening...
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/annyang@2.6.1/dist/annyang.min.js"></script>
+  <script type="module" src="js/chatbot.js"></script>
+  <script type="module" src="js/floating-assistant.js"></script>
+</body>
+</html>

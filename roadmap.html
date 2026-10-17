@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Roadmap Journey | LeetCrack</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #f9f9f9;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 30px;
+      background: #fff;
+      box-shadow: 0 1px 2px #ccc;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: maroon;
+      font-weight: bold;
+    }
+
+    .journey-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .journey-step {
+      background: white;
+      border: 2px solid #007acc;
+      border-radius: 20px;
+      padding: 20px 40px;
+      margin: 15px 0;
+      width: 300px;
+      text-align: center;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .journey-step:hover {
+      transform: scale(1.05);
+      background-color: #f0f8ff;
+    }
+
+    .journey-step::before {
+      content: "🚩";
+      position: absolute;
+      left: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+    }
+
+    .line {
+      width: 4px;
+      height: 30px;
+      background-color: #007acc;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html">LeetCrack<span style="color:black;">.</span></a>
+  <div>
+    <a href="companies.html">Companies</a>
+    <a href="roadmap.html">Roadmap</a>
+  </div>
+</nav>
+
+<!-- Roadmap tabs -->
+<div class="roadmap-tabs" style="padding:20px;">
+  <div class="tabs" role="tablist" aria-label="Roadmap types">
+    <button class="tab-btn active" data-target="basic">Basic Roadmap</button>
+    <button class="tab-btn" data-target="python">Python Programmer</button>
+    <button class="tab-btn" data-target="frontend">Frontend Roadmap</button>
+    <button class="tab-btn" data-target="backend">Backend Roadmap</button>
+    <button class="tab-btn" data-target="cpp">C++ Programmer</button>
+    <button class="tab-btn" data-target="java">Java Programmer</button>
+    <button class="tab-btn" data-target="custom">Custom Roadmaps</button>
+  </div>
+
+  <div class="tab-content">
+    <div class="roadmap-pane active" data-key="basic">
+      <div class="journey-container" id="journey-basic"></div>
+    </div>
+    <div class="roadmap-pane" data-key="python">
+      <div class="journey-container" id="journey-python"></div>
+    </div>
+    <div class="roadmap-pane" data-key="frontend">
+      <div class="journey-container" id="journey-frontend"></div>
+    </div>
+    <div class="roadmap-pane" data-key="backend">
+      <div class="journey-container" id="journey-backend"></div>
+    </div>
+    <div class="roadmap-pane" data-key="cpp">
+      <div class="journey-container" id="journey-cpp"></div>
+    </div>
+    <div class="roadmap-pane" data-key="java">
+      <div class="journey-container" id="journey-java"></div>
+    </div>
+    <div class="roadmap-pane" data-key="custom">
+      <div style="display:flex;gap:20px;flex-direction:column;">
+        <div>
+          <h3>Your Custom Roadmaps</h3>
+          <p>Create and manage your personalized roadmaps here.</p>
+        </div>
+
+        <div id="custom-list" style="display:flex;flex-direction:column;gap:8px;max-width:720px;"></div>
+
+        <div style="border-top:1px solid #eee;padding-top:16px;max-width:720px;">
+          <h4>Create New Roadmap</h4>
+          <form id="create-custom-form">
+            <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:flex-start;">
+              <input id="custom-name" placeholder="Roadmap name (e.g. My Interview Plan)" style="flex:1;padding:8px;border-radius:6px;border:1px solid #ccc" required />
+              <textarea id="custom-items" placeholder="Add items, one per line (e.g. Arrays\nTwo Pointers\nDynamic Programming)" rows="4" style="flex:1;padding:8px;border-radius:6px;border:1px solid #ccc"></textarea>
+            </div>
+            <div style="margin-top:8px;">
+              <button type="submit" class="tab-btn">Create Roadmap</button>
+            </div>
+          </form>
+        </div>
+
+        <div id="custom-preview" style="margin-top:12px;max-width:720px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .tabs { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
+  .tab-btn { background:#fff; border:1px solid #ccc; padding:8px 12px; border-radius:8px; cursor:pointer; }
+  .tab-btn.active { background:#007acc; color:#fff; border-color:#007acc; }
+  .tab-content .roadmap-pane { display:none; }
+  .tab-content .roadmap-pane.active { display:block; }
+  @media (max-width:640px){ .journey-step{ width:100% !important; } }
+</style>
+
+<script src="js/roadmap.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet"></script>
+<script src="https://cdn.jsdelivr.net/npm/annyang@2.6.1/dist/annyang.min.js"></script>
+<script type="module" src="js/floating-assistant.js"></script>
+<script type="module" src="js/voice-commands.js"></script>
+</body>
+</html>

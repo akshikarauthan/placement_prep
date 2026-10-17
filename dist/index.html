@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeetCrack</title>
+  <style>body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-image: url('/346f2796ee55763b3ac5473cf2f908d8.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.85);
+      min-height: 100vh;
+      padding-bottom: 50px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+      font-weight: bold;
+      background-color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #8b0000;
+      font-size: 18px;
+      transition: color 0.3s ease, transform 0.3s ease;
+      position: relative;
+    }
+    
+    .navbar a:hover {
+      color: #ffd700;
+      transform: translateY(-2px);
+    }
+    
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #ffd700;
+      transition: width 0.3s ease;
+    }
+    
+    .navbar a:hover::after {
+      width: 100%;
+    }
+
+    .centered {
+      display: flex;
+      justify-content: center;
+      padding-top: 40px;
+      text-align: center;
+    }
+
+    input[type="text"] {
+      padding: 12px 20px;
+      width: 300px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+    
+    input[type="text"]:focus {
+      border-color: #8b0000;
+      box-shadow: 0 2px 12px rgba(139,0,0,0.1);
+      outline: none;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 30px;
+      gap: 25px;
+    }
+
+    .card {
+      background-color: #f8f9fa;
+      border-radius: 15px;
+      padding: 30px;
+      min-width: 150px;
+      text-align: center;
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-top: 4px solid #8b0000;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.18);
+      border-top-color: #ffd700;
+    }
+
+    .card a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 20px;
+      color: #8b0000;
+    }
+
+    .card-link {
+        text-decoration: none;
+    }
+
+    .card-link .card {
+        color: #8b0000;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    #suggestions li:hover {
+        background-color: #f9f9f9;
+    }
+    
+    /* Animation container styling */
+    #cube-animation-container {
+      position: absolute;
+      top: 80px;
+      right: 30px;
+      width: 300px;
+      height: 300px;
+      z-index: 0;
+      opacity: 0.8;
+    }
+    
+    /* Handwriting accent */
+    .handwritten-accent {
+      font-family: 'Caveat', cursive;
+      font-size: 1.4em;
+      color: #4b0082;
+      transform: rotate(-2deg);
+      display: inline-block;
+      margin: 0 0.2em;
+    }
+    
+    /* Footer styling */
+    footer {
+      background-color: #f8f9fa;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 -4px 10px rgba(0,0,0,0.05);
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .centered h1 {
+        font-size: 1.8rem;
+      }
+      
+      #cube-animation-container {
+        width: 200px;
+        height: 200px;
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+      }
+    }</style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;700&family=Caveat:wght@400;700&family=Fira+Code&display=swap" rel="stylesheet">
+  <link href="/19bc8c58930eaf325f82f915a0cc3e13.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+  <div class="overlay">
+    <nav class="navbar">
+      <a href="/index.html">LeetCrack<span style="color: #ffd700;">.</span></a>
+      <div style="display: flex; gap: 20px;">
+        <a href="/39f4728f4653625c208c94978ad601be.html">Companies</a>
+        <a href="/d966626d34eef85f51d3fd97af8eb929.html">Roadmap</a>
+        <a href="/ec8af71c7dd864fb830597d9997c1dc1.html">Dashboard</a>
+        <a href="/0804067e6249f07635d7215f3ab7f030.html">AI Assistant</a>
+      </div>
+    </nav>
+
+    <!-- 3D Animation Container -->
+    <div id="cube-animation-container"></div>
+
+    <div class="centered">
+      <h1>Curated Leetcode Problems from <span class="handwritten-accent">top PBCs</span> in INDIA 🇮🇳</h1>
+    </div>
+
+    <div class="grid">
+        <a href="/b58a0d573bb50691ab7fb1b4cb564aef.html?company=Amazon" class="card-link"><div class="card">Amazon</div></a>
+        <a href="/b58a0d573bb50691ab7fb1b4cb564aef.html?company=Google" class="card-link"><div class="card">Google</div></a>
+        <a href="/b58a0d573bb50691ab7fb1b4cb564aef.html?company=Microsoft" class="card-link"><div class="card">Microsoft</div></a>
+        <a href="/b58a0d573bb50691ab7fb1b4cb564aef.html?company=Adobe" class="card-link"><div class="card">Adobe</div></a>
+        <a href="/b58a0d573bb50691ab7fb1b4cb564aef.html?company=Cisco" class="card-link"><div class="card">Cisco</div></a>
+        <a href="/b58a0d573bb50691ab7fb1b4cb564aef.html?company=J.P.%20Morgan" class="card-link"><div class="card">J.P. Morgan</div></a>
+        <a href="/b58a0d573bb50691ab7fb1b4cb564aef.html?company=Zomato" class="card-link"><div class="card">Zomato</div></a>
+        <a href="/b58a0d573bb50691ab7fb1b4cb564aef.html?company=Uber" class="card-link"><div class="card">Uber</div></a>
+        <a href="/b58a0d573bb50691ab7fb1b4cb564aef.html?company=IBM" class="card-link"><div class="card">IBM</div></a>
+        <a href="/b58a0d573bb50691ab7fb1b4cb564aef.html?company=Flipkart" class="card-link"><div class="card">Flipkart</div></a>
+        <a href="/b58a0d573bb50691ab7fb1b4cb564aef.html?company=CRED" class="card-link"><div class="card">CRED</div></a>
+        <a href="/39f4728f4653625c208c94978ad601be.html" class="card-link"><div class="card">more...</div></a>
+    </div>
+    
+    <footer>
+      <p>© 2023 LeetCrack | <span class="handwritten-accent">Crack the code, ace the interview</span></p>
+    </footer>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/annyang@2.6.1/dist/annyang.min.js"></script>
+  <script type="module" src="/79e21e714d8197dd8cc791fda0d98154.js"></script>
+  <script type="module" src="/1630df3de6323f37bfdbab89764a0174.js"></script>
+  <script type="module" src="/f78f630b56210882eb0000beb232df36.js"></script>
+</body>
+</html>

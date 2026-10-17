@@ -1,0 +1,229 @@
+:root {
+  /* Enhanced color palette */
+  --primary-color: #8b0000; /* deeper maroon */
+  --secondary-color: #f8f9fa; /* lighter background */
+  --accent-color-1: #ffd700; /* gold */
+  --accent-color-2: #4b0082; /* indigo */
+  --accent-color-3: #00bfff; /* deep sky blue */
+  --text-color: #333;
+  --light-bg: #fdfdfd;
+  --card-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  --hover-shadow: 0px 12px 28px rgba(0, 0, 0, 0.18);
+  
+  /* Font families */
+  --heading-font: 'Playfair Display', serif;
+  --body-font: 'Roboto', sans-serif;
+  --handwriting-font: 'Caveat', cursive;
+  --code-font: 'Fira Code', monospace;
+}
+
+body {
+  font-family: var(--body-font);
+  color: var(--text-color);
+  background-image: url('../assets/background.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: var(--light-bg);
+  line-height: 1.6;
+}
+
+/* Smooth theme transition */
+html {
+  transition: background-color 300ms ease, color 300ms ease;
+}
+
+/* Dark theme overrides */
+[data-theme="dark"] {
+  --primary-color: #ffd45a; /* brighter primary on dark */
+  --secondary-color: #0b1220; /* dark surface */
+  --accent-color-1: #ffb347;
+  --accent-color-2: #9b59b6;
+  --accent-color-3: #60a5fa;
+  --text-color: #e6eef8;
+  --light-bg: #071427;
+  --card-shadow: 0px 12px 30px rgba(0, 0, 0, 0.5);
+  --hover-shadow: 0px 18px 36px rgba(0, 0, 0, 0.6);
+}
+
+/* Apply background and text color transitions site-wide */
+body, .card, .navbar, .overlay {
+  transition: background-color 300ms ease, color 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
+}
+
+/* Dark-mode element overrides to override any hard-coded whites */
+[data-theme="dark"] body {
+  background-image: none !important;
+  background-color: var(--light-bg) !important;
+  color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .overlay {
+  background-color: rgba(7,20,39,0.6) !important;
+}
+
+[data-theme="dark"] .navbar {
+  background-color: rgba(255,255,255,0.03) !important;
+  box-shadow: none !important;
+  color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .container,
+[data-theme="dark"] .quiz-card,
+[data-theme="dark"] .quiz-area,
+[data-theme="dark"] .results,
+[data-theme="dark"] .wa-hero {
+  background-color: rgba(255,255,255,0.03) !important;
+  color: var(--text-color) !important;
+  border-top-color: rgba(255,183,77,0.08) !important;
+}
+
+[data-theme="dark"] .list-group .list-group-item {
+  background-color: transparent !important;
+  color: var(--text-color) !important;
+  border-color: rgba(255,255,255,0.03) !important;
+}
+
+[data-theme="dark"] .list-group .list-group-item.active {
+  background: linear-gradient(90deg, rgba(255,183,77,0.12), rgba(255,179,71,0.06)) !important;
+  color: #0b1220 !important;
+}
+
+[data-theme="dark"] a { color: var(--accent-color-3) !important; }
+
+[data-theme="dark"] .btn-primary,
+[data-theme="dark"] .btn-cta,
+[data-theme="dark"] #revealBtn,
+[data-theme="dark"] #nextBtn {
+  box-shadow: 0 8px 20px rgba(11,21,41,0.12);
+  color: #fff !important;
+}
+
+[data-theme="dark"] .wa-hero p.small-muted { color: rgba(230,238,248,0.8); }
+
+/* Footer dark-mode fixes */
+[data-theme="dark"] footer {
+  background-color: transparent !important;
+  color: var(--text-color) !important;
+  box-shadow: none !important;
+  border-top: 1px solid rgba(255,255,255,0.04) !important;
+}
+
+[data-theme="dark"] footer p { color: rgba(230,238,248,0.85) !important; }
+[data-theme="dark"] footer .handwritten-accent { color: var(--accent-color-1) !important; }
+
+
+/* Enhanced navbar styling */
+.navbar {
+  background-color: white;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 15px 30px;
+}
+
+.navbar a {
+  color: var(--primary-color);
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+.navbar a:hover {
+  color: var(--accent-color-1);
+  transform: translateY(-2px);
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--accent-color-1);
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Enhanced card styling */
+.card {
+  background-color: var(--secondary-color);
+  border-radius: 15px;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid var(--primary-color);
+  overflow: hidden;
+  padding: 30px;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--hover-shadow);
+  border-top-color: var(--accent-color-1);
+}
+
+/* Heading styles with handwriting font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: -0.5px;
+}
+
+/* Handwriting accent elements */
+.handwritten-accent {
+  font-family: var(--handwriting-font);
+  font-size: 1.4em;
+  color: var(--accent-color-2);
+  transform: rotate(-2deg);
+  display: inline-block;
+  margin: 0 0.2em;
+}
+
+/* Button styling */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color-2);
+  border-color: var(--accent-color-2);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation container styling */
+#cube-animation-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  z-index: 0;
+  opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  #cube-animation-container {
+    width: 200px;
+    height: 200px;
+  }
+}

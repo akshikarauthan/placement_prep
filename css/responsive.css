@@ -1,0 +1,45 @@
+/* Mobile styles */
+@media (max-width: 768px) {
+  .grid {
+    padding: 10px;
+    gap: 10px;
+  }
+  
+  .card {
+    min-width: 120px;
+    padding: 20px;
+  }
+  
+  .centered h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0 15px;
+  }
+  
+  nav {
+    padding: 10px 15px;
+  }
+  
+  .alphabet-sidebar {
+    display: none;
+  }
+  
+  #roadmap-container {
+    flex-direction: column;
+  }
+  
+  .difficulty-column {
+    margin-bottom: 20px;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid {
+    padding: 15px;
+  }
+  
+  .centered h1 {
+    font-size: 1.8rem;
+  }
+}

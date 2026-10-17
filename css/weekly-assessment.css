@@ -1,0 +1,87 @@
+/* Charming, light styles for the weekly assessment */
+body {
+  background: linear-gradient(135deg, #f8fafc 0%, #fff 100%);
+}
+.quiz-card {
+  border-radius: 12px;
+  background: linear-gradient(180deg, #ffffffcc, #ffffff);
+}
+#question {
+  color: #1f2937;
+}
+.list-group .list-group-item {
+  cursor: pointer;
+  border-radius: 8px;
+}
+.list-group .list-group-item.active {
+  background: linear-gradient(90deg,#ffd700,#ffb347);
+  color: #111;
+  box-shadow: 0 6px 18px rgba(255,183,77,0.2);
+}
+.timer {
+  color: #8b0000;
+}
+.badge {
+  font-size: 0.9rem;
+}
+#history-list .history-item {
+  border-left: 4px solid #8b0000;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  background: #fff;
+}
+.confetti {
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .timer { font-size: 1.4rem; }
+}
+
+/* Chart canvas sizing */
+#historyChart {
+  width: 100%;
+  height: 260px;
+  max-height: 360px;
+  display: block;
+}
+
+/* Polished UI additions */
+.wa-hero {
+  background: linear-gradient(90deg, rgba(139,0,0,0.06), rgba(255,215,0,0.04));
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wa-hero h2 {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  color: #8b0000;
+}
+.wa-hero p { margin: 0; color: #374151; }
+
+.btn-cta {
+  background: linear-gradient(90deg,#8b0000,#4b0082);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(75,0,130,0.12);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.btn-cta:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(75,0,130,0.16); }
+
+.quiz-card { position: relative; overflow: visible; }
+.question-fade-in { animation: fadeInUp 420ms ease both; }
+
+@keyframes fadeInUp {
+  from { transform: translateY(8px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.small-muted { color: #6b7280; font-size: .95rem; }
+

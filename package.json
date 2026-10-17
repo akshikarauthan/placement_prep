@@ -1,0 +1,24 @@
+{
+  "name": "placement_prep",
+  "version": "1.0.0",
+  "description": "DSA & Coding Interview Prep Tracker",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html",
+    "start": "node server.js",
+    "build:embeddings": "node scripts/build_embeddings.js"
+  },
+  "dependencies": {
+    "annyang": "^2.6.1",
+    "bootstrap": "^5.3.2",
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.3",
+    "bcryptjs": "^2.4.3",
+    "chart.js": "^4.4.0",
+    "marked": "^16.0.0",
+    "openai": "^5.8.2"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
